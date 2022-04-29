@@ -1,0 +1,240 @@
+<div class=" content" xmlns="http://www.w3.org/1999/html">
+  <div class=" row">
+    <div class=" col-md-8">
+
+      <div class=" card">
+        <div class=" card-header"><h5 class=" title">ADD SUB ADMIN</h5></div>
+        <div class=" card-body">
+          <form>
+            <div class=" row">
+              <div class=" col-md-5 pr-md-1">
+                <div class=" form-group">
+                  <label> Company (disabled) </label>
+                  <input
+                    class=" form-control"
+                    disabled=""
+                    placeholder="Company"
+                    type="text"
+                    value="GROUND ZERO"
+                  />
+                </div>
+              </div>
+
+              <div class=" col-md-3 px-md-1">
+                <div class=" form-group">
+                  <label> Username </label>
+                  <input
+                    class=" form-control"
+                    placeholder="Username"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class=" col-md-4 pl-md-1">
+                <div class=" form-group">
+                  <label for="exampleInputEmail1"> Email address </label>
+                  <input
+                    class=" form-control"
+                    placeholder="user@email.com"
+                    type="email"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class=" row">
+              <div class=" col-md-6 pr-md-1">
+                <div class=" form-group">
+                  <label> First Name </label>
+                  <input
+                    class=" form-control"
+                    placeholder="First Name"
+                    type="text"
+                    value=""
+                  />
+                </div>
+
+              </div>
+              <div class=" col-md-6 pl-md-1">
+                <div class=" form-group">
+                  <label> Last Name </label>
+                  <input
+                    class=" form-control"
+                    placeholder="Last Name"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class=" row">
+              <div class=" col-md-12">
+                <div class=" form-group">
+                  <label> Address </label>
+                  <input
+                    class=" form-control"
+                    placeholder="Home Address"
+                    type="Address"
+                    value=""
+                  />
+
+                </div>
+              </div>
+            </div>
+            <div class=" row">
+              <div class=" col-md-4 pr-md-1">
+                <div class=" form-group">
+                  <label> City </label>
+                  <input
+                    class=" form-control"
+                    placeholder="City"
+                    type="City"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class=" col-md-4 px-md-1">
+                <div class=" form-group">
+                  <label> Country </label>
+                  <input
+                    class=" form-control"
+                    placeholder="Country"
+                    type="Country"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class=" col-md-4 pl-md-1">
+                <div class=" form-group">
+                  <label> Postal Code </label>
+                  <input
+                    class=" form-control"
+                    placeholder="ZIP Code"
+                    type="number"
+                  />
+                </div>
+              </div>
+            </div>
+
+
+                <div class=" form-group">
+                  <div class=" card-header"><h5 class=" title" style="font-size: large">PERMISSIONS</h5></div>
+
+                  <section class="example-section">
+                    <label  style="font-size: large; color: slategray">USER MANAGEMENT</label>  &nbsp;<br>
+
+                    <mat-checkbox class="example-margin" [(ngModel)]="checked">Create Users</mat-checkbox>
+                    &nbsp;
+                    <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Add Users</mat-checkbox>
+                    &nbsp;
+                    <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Update Users</mat-checkbox>
+                    &nbsp;<br>
+                    <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Delete Users</mat-checkbox>
+                    &nbsp;
+                    <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">View Active Users</mat-checkbox>
+                    &nbsp;
+                    <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">View All Users</mat-checkbox>
+                    &nbsp;
+                    <br>
+                  </section>
+                  </div>
+                  <section>
+                    <label  style="font-size: large; color: slategray">MACHINES MANAGEMENT </label>
+                    &nbsp;<br>
+                    <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Create CTF Machines</mat-checkbox>
+                    &nbsp;
+                    <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Create Vulnerable Machines</mat-checkbox>
+                    &nbsp;
+                    <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Add Machines</mat-checkbox>
+                    &nbsp;<br>
+                    <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Delete Machines</mat-checkbox>
+                    &nbsp;
+                    <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Pause All Machines</mat-checkbox>
+                    <br>
+                  </section>
+
+            <section>
+              <label style="font-size: large; color: slategray">COMPETITIONS MANAGEMENT</label>
+              &nbsp;<br>
+              <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Create New Competition</mat-checkbox>
+              &nbsp;
+              <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Add User In Competition</mat-checkbox>
+              &nbsp;
+              <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Remove User In Competition</mat-checkbox>
+              &nbsp;<br>
+              <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Add Machines For Competition</mat-checkbox>
+              &nbsp;
+              <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Stop Competition</mat-checkbox>
+              &nbsp;
+              <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Delete Competition</mat-checkbox>
+              <br>
+            </section>
+
+
+
+
+
+
+          </form>
+        </div>
+
+        <div class=" card-footer">
+          <button class=" btn btn-fill btn-danger" type="submit">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div class=" col-md-4">
+      <div class=" card card-user">
+        <div class=" card-body">
+          <p class=" card-text"></p>
+          <div class=" author">
+            <div class=" block block-one"></div>
+            <div class=" block block-two"></div>
+            <div class=" block block-three"></div>
+            <div class=" block block-four"></div>
+            <a href="javascript:void(0)">
+              <img alt="..." class=" avatar" src="assets/img/emilyz.jpg" />
+
+              <h5 class=" title">Mike Andrew</h5>
+            </a>
+            <p class=" description">SUPER ADMIN</p>
+          </div>
+          <div class=" card-description">
+            Do not be scared of the truth because we need to restart the human
+            foundation in truth And I love you like Kanye loves Kanye I love
+            Rick Owens’ bed design but the back is...
+          </div>
+        </div>
+        <div class=" card-footer">
+          <div class=" button-container">
+            <button
+              class=" btn btn-icon btn-round btn-facebook"
+              href="javascript:void(0)"
+            >
+              <i class=" fab fa-facebook"> </i>
+            </button>
+            <button
+              class=" btn btn-icon btn-round btn-twitter"
+              href="javascript:void(0)"
+            >
+              <i class=" fab fa-twitter"> </i>
+            </button>
+            <button
+              class=" btn btn-icon btn-round btn-google"
+              href="javascript:void(0)"
+            >
+              <i class=" fab fa-google-plus"> </i>
+            </button>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------------------------------------------------------------------------------>
+
+
