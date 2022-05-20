@@ -15,7 +15,6 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
 import { MatSlideToggleModule } from '@angular/material';
 import { InputSwitchModule, CheckboxModule } from 'primeng';
 import { MatSliderModule } from '@angular/material/slider';
-import { SignuppageComponent } from './signuppage/signuppage.component';
 // import { TRAININGComponent } from './training/training.component';
 
 // @ts-ignore
@@ -37,7 +36,7 @@ import { SignuppageComponent } from './signuppage/signuppage.component';
     CheckboxModule,
     FormsModule
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, BrutefoeceattackComponent, LoginpageComponent, SignuppageComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, BrutefoeceattackComponent, LoginpageComponent],
   providers: [],
   // exports: [
   //   TRAININGComponent
