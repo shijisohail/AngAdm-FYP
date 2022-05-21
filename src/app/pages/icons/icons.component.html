@@ -13,120 +13,37 @@
             <!----------------------------->
             <a href="https://crc.bahria.edu.pk/">CRC LAB</a>
           </p>
-          <div class=" card-header">
+
+          <div class="card-header">
+          <h6 class=" title">ENTER NEW ATTACKS</h6>
+
+          <form #formID="ngForm" (ngSubmit)="onSubmit(formID.value)">
+            <div class="form-group">
+              <label for="InputAttackTitle">Attack Title</label>
+              <input ngModel type="text" class="form-control" name="AttackTitle" id="InputAttackTitle" placeholder="Enter Attack Title">
+            </div>
+            <div class="form-group">
+              <label for="InputAttackDescripton">Attack Description</label>
+              <textarea ngModel class="form-control" name="AttackDescription" id="InputAttackDescripton" placeholder="Enter Attack Description" ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <br>
+          </div>
+
+          <div class="card-header">
             <h6 class=" title">ATTACKS THAT WE OFFER IN CRC CYBER RANGE FOR EDUCATIONAL PURPOSES</h6>
-            <p-accordion>
-              <p-accordionTab header="Brute Force Attack"  align="justify">
-                A brute force attack is a trial-and-error method used to obtain information
-                such as a user password or personal identification number (PIN). In a brute
-                force attack, automated software is used to generate a large number of consecutive
-                guesses as to the value of the desired data. Brute force attacks may be used by criminals
-                to crack encrypted data, or by security analysts to test an organization's network
-                security. A brute force attack is also known as brute force cracking or simply brute force
+
+            <p-accordion >
+              <!-- 1. for loop over variable -->
+              <!-- For each, create p-accordionTab -->
+              <div>
+              <p-accordionTab *ngFor="let e of variable;"header="{{e.AttackTitle}}"  align="justify">
+               {{e.AttackDescription}}
               </p-accordionTab>
-              <p-accordionTab header="COMMAND EXECUTION"  align="justify">
-                Command injection is an attack in which the goal is execution of arbitrary
-                commands on the host operating system via a vulnerable application. Command
-                injection attacks are possible when an application passes unsafe user supplied
-                data (forms, cookies, HTTP headers etc.) to a system shell. In this attack, the
-                attacker-supplied operating system commands are usually executed with the privileges
-                of the vulnerable application. Command injection attacks are possible largely due to
-                insufficient input validation.
-              </p-accordionTab>
-              <p-accordionTab header="Cross-Site Request Forgery (CSRF)"  align="justify">
-                Cross-Site Request Forgery (CSRF) is a type of attack that occurs when a malicious
-                web site, email, blog, instant message, or program causes a user’s web browser to
-                perform an unwanted action on a trusted site when the user is authenticated. A CSRF
-                attack works because browser requests automatically include any credentials associated
-                with the site, such as the user’s session cookie, IP address, etc.
-              </p-accordionTab>
-              <p-accordionTab header="FILE INCLUSION VULNERABILITY"  align="justify">
-                A file inclusion vulnerability is a type of web vulnerability that is most commonly
-                found to affect web applications that rely on a scripting run time. This issue is caused
-                when an application builds a path to executable code using an attacker-controlled variable
-                in a way that allows the attacker to control which file is executed at run time. A file include
-                vulnerability is distinct from a generic directory traversal attack, in that directory traversal
-                is a way of gaining unauthorized file system access, and a file inclusion vulnerability subverts
-                how an application loads code for execution
-                </p-accordionTab>
-              <p-accordionTab header="FILE UPLOAD" align="justify">
-                A local file upload vulnerability is a vulnerability where an application allows a
-                user to upload a malicious file directly which is then executed.
-                A remote file upload vulnerability is a vulnerability where an application uses
-                user input to fetch a remote file from a site on the Internet and store it locally.
-                This file is then executed by an attacker.
-              </p-accordionTab>
-              <p-accordionTab header="SQL INJECTION" align="justify">
-                An SQL injection is a computer attack in which malicious code is embedded in
-                a poorly-designed application and then passed to the backend database. The malicious
-                data then produces database query results or actions that should never have been executed.
-             <!--<table>
-               <tr>
-                 <td>
-                   <i class="tim-icons icon-laptop" (click)="open(mut_mdl)"style="cursor: pointer; color: #1d8cf8" rel="tooltip" title="View Machine Details"></i>&nbsp;&nbsp;
-
-                   <i class="fa fa-edit" (click)="open(mutil_cntct)" style="cursor: pointer; color: #00f2c3" rel="tooltip" title="Write Review"></i>&nbsp;&nbsp;
-
-                   <button type="button" class="btn btn-danger btn-sm" id="btn1" (click)="changeBtn('btn1')">Off</button>
-                 </td>
-               </tr>
-             </table>-->
-              </p-accordionTab>
-                      <p-accordionTab header="SQL INJECTION ( BLIND )" align="justify">
-                        Blind SQL injection arises when an application is vulnerable to SQL injection,
-                        but its HTTP responses do not contain the results of the relevant SQL query or
-                        the details of any database errors. With blind SQL injection vulnerabilities,
-                        many techniques such as UNION attacks are not effective, because they rely on
-                        being able to see the results of the injected query within the application's responses.
-                        It is still possible to exploit blind SQL injection to access unauthorized data,
-                        but different techniques must be used..
-                      </p-accordionTab>
-
-                      <p-accordionTab header="XSS DOM" align="justify">
-                        DOM XSS stands for Document Object Model-based Cross-site Scripting.
-                        A DOM-based XSS attack is possible if the web application writes data
-                        to the Document Object Model without proper sanitization.
-                        The attacker can manipulate this data to include XSS content on the web page,
-                        for example, malicious JavaScript code.
-                      </p-accordionTab>
-
-                      <p-accordionTab header=" XSS REFLECTED" align="justify">
-                        A reflected XSS (or also called a non-persistent XSS attack) is a
-                        specific type of XSS whose malicious script bounces off of another
-                        website to the victim’s browser. It is passed in the query, typically,
-                        in the URL. It makes exploitation as easy as tricking a user to click on a link.
-                        Compared to stored XSS, non-persistent XSS only require the malicious script to
-                        be added to a link and that a user clicks on it.
-                      </p-accordionTab>
-
-                      <p-accordionTab header="XSS STORED" align="justify">
-                        A loStored attacks are those where the injected script is permanently
-                        stored on the target servers, such as in a database, in a message forum,
-                        visitor log, comment field, etc. The victim then retrieves the malicious
-                        script from the server when it requests the stored information. Stored XSS
-                        is also sometimes referred to as Persistent or Type-I XSS
-                      </p-accordionTab>
-
-                      <p-accordionTab header="BUFFER OVERFLOW" align="justify">
-                        A buffer overflow condition exists when a program attempts to put
-                        more data in a buffer than it can hold or when a program attempts
-                        to put data in a memory area past a buffer. In this case, a buffer
-                        is a sequential section of memory allocated to contain anything from
-                        a character string to an array of integers. Writing outside the bounds of
-                        a block of allocated memory can corrupt data, crash the program, or cause
-                        the execution of malicious code.
-                      </p-accordionTab>
-
-                    <p-accordionTab header="PRIVLAGED ESSCLATION" align="justify">
-                      Privilege escalation happens when a malicious user of an account or application
-                      gains access to the privileges of another user account in the target system. The attacker
-                      can then use the newly gained privileges to steal confidential data, run administrative commands
-                      or deploy malware and potentially do serious damage to your operating system, server applications,
-                      organization, and reputation. In this blog post, we will look at typical privilege escalation scenarios
-                      and learn how you can protect user accounts in your systems and applications to maintain a good security posture.
-                    </p-accordionTab>
-
+              </div>
             </p-accordion>
+            
 
 
           </div>
