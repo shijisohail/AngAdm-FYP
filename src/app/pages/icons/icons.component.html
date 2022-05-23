@@ -17,14 +17,14 @@
           <div class="card-header">
           <h6 class=" title">ENTER NEW ATTACKS</h6>
 
-          <form #formID="ngForm" (ngSubmit)="onSubmit(formID.value)">
+          <form method="post" FormData="formdata" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label for="InputAttackTitle">Attack Title</label>
-              <input ngModel type="text" class="form-control" name="AttackTitle" id="InputAttackTitle" placeholder="Enter Attack Title">
+              <input [(ngModel)]="AttackTitle" type="text" class="form-control" name="AttackTitle" id="InputAttackTitle" placeholder="Enter Attack Title">
             </div>
             <div class="form-group">
               <label for="InputAttackDescripton">Attack Description</label>
-              <textarea ngModel class="form-control" name="AttackDescription" id="InputAttackDescripton" placeholder="Enter Attack Description" ></textarea>
+              <textarea [(ngModel)]="AttackDescription" class="form-control" name="AttackDescription" id="InputAttackDescripton" placeholder="Enter Attack Description" ></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
