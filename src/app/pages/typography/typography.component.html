@@ -5,7 +5,9 @@
       <div class=" card">
         <div class=" card-header"><h5 class=" title" style="color:#A3FF01">MACHINE GENERATION</h5></div>
         <div class=" card-body">
-          <form>
+          
+          
+          <form method="post" FormData="formdata" (ngSubmit)="onSubmit()">
             <div class="row">
               <div class=" col-md-5 pr-md-1">
                 <div class=" form-group">
@@ -15,7 +17,7 @@
                     disabled=""
                     placeholder="Company"
                     type="text"
-                    value="GROUND ZERO"
+                    value="Hackademy"
                   />
                 </div>
               </div>
@@ -24,6 +26,8 @@
                 <div class=" form-group">
                   <label> MACHINE NAME </label>
                   <input
+                    [(ngModel)]="MachineName"
+                    name="MachineName"
                     class=" form-control"
                     placeholder="MACHINE NAME"
                     type="text"
@@ -35,10 +39,13 @@
               <br>
               <div class=" col-md-4 pl-md-1">
                     <mat-form-field style="top: 1.25em;  margin-top: 2px; height: 30px;">
-                      <mat-select placeholder="MACHINE TYPE"
+                      <mat-select 
+                                  [(ngModel)]="MachineType"
+                                  name="MachineType"
+                                  placeholder="MACHINE TYPE"
                                   [(value)]="selectedElementGroup" selected>
                           <mat-option value="CTF">CTF</mat-option>
-                          <mat-option value="VUL">VUL MACHINE</mat-option>
+                          <mat-option value="VUL MACHINE">VUL MACHINE</mat-option>
                           <mat-option value="WEB">WEB</mat-option>
                       </mat-select>
                     </mat-form-field>
@@ -50,6 +57,8 @@
                   <label> Creation Date </label>
                   <input
                     class=" form-control"
+                    [(ngModel)]="CreationDate"
+                    name="CreationDate"
                     placeholder="Creation Date"
                     type="datetime-local"
                     value=""
@@ -62,6 +71,8 @@
                   <label> Expiry Date </label>
                   <input
                     class=" form-control"
+                    [(ngModel)]="ExpiryDate"
+                    name="ExpiryDate"
                     placeholder="Last Name"
                     type="date"
                     value=""
@@ -75,6 +86,8 @@
                   <label> MACHINE DESCRIPTION </label>
                   <input
                     class=" form-control"
+                    [(ngModel)]="MachineDescription"
+                    name="MachineDescription"
                     placeholder="Details"
                     type="text"
                     value=""
@@ -87,22 +100,24 @@
               <div class=" col-md-4 pr-md-1">
                 <mat-form-field style="top: 1.25em;  margin-top: 2px; height: 30px;">
                   <mat-select placeholder="VULNERABILITY"
+                              [(ngModel)]="Vulnerability"
+                              name="Vulnerability"
                               [(value)]="selectedElementGroup1" selected>
                     <mat-optgroup label="UNIX">
-                    <mat-option value="v1">readable_shadow</mat-option>
-                    <mat-option value="v2">suid_root_bash</mat-option>
-                    <mat-option value="v3">suid_root_less</mat-option>
-                      <mat-option value="v4">suid_root_nano</mat-option>
-                      <mat-option value="v5">suid_root_vi</mat-option>
-                      <mat-option value="v6">writable_groups</mat-option>
-                      <mat-option value="v7">writable_passwd</mat-option>
-                      <mat-option value="v8">writable_shadow</mat-option>
+                    <mat-option value="readable_shadow">readable_shadow</mat-option>
+                    <mat-option value="suid_root_bash">suid_root_bash</mat-option>
+                    <mat-option value="suid_root_less">suid_root_less</mat-option>
+                      <mat-option value="suid_root_nano">suid_root_nano</mat-option>
+                      <mat-option value="suid_root_vi">suid_root_vi</mat-option>
+                      <mat-option value="writable_groups">writable_groups</mat-option>
+                      <mat-option value="writable_passwd">writable_passwd</mat-option>
+                      <mat-option value="writable_shadow">writable_shadow</mat-option>
                       <i class="tim-icons icon-attach-87" (click)="open(var1)"style="cursor: pointer; color: #1d8cf8" rel="tooltip" title="BLOG DETAILS"></i>
                     </mat-optgroup>
                     <mat-optgroup label="WINDOWS">
-                      <mat-option value="v1">adobe_utilprintf</mat-option>
-                      <mat-option value="v2">easyftp_rce</mat-option>
-                      <mat-option value="c3">freefloatftp_user</mat-option>
+                      <mat-option value="adobe_utilprintf">adobe_utilprintf</mat-option>
+                      <mat-option value="easyftp_rce">easyftp_rce</mat-option>
+                      <mat-option value="freefloatftp_user">freefloatftp_user</mat-option>
                     </mat-optgroup>
 
                   </mat-select>
@@ -112,15 +127,17 @@
               <div class=" col-md-4 px-md-1">
                 <mat-form-field style="top: 1.25em;  margin-top: 2px; height: 30px;">
                   <mat-select placeholder="DIFFICULTY"
+                              [(ngModel)]="Difficulty"
+                              name="Difficulty"
                               [(value)]="selectedElementGroup2" selected>
-                    <mat-option value="e">easy</mat-option>
-                    <mat-option value="m">medium</mat-option>
-                    <mat-option value="h">high</mat-option>
+                    <mat-option value="easy">easy</mat-option>
+                    <mat-option value="medium">medium</mat-option>
+                    <mat-option value="high">high</mat-option>
 
                   </mat-select>
                 </mat-form-field>
               </div>
-              <div class=" col-md-4 pl-md-1">
+              <!-- <div class=" col-md-4 pl-md-1">
                 <mat-form-field style="top: 1.25em;  margin-top: 2px; height: 60px;">
                   <mat-select placeholder="MODULE"
                               [(value)]="selectedElementGroup3" selected>
@@ -133,17 +150,13 @@
                     <mat-option value="g">utilities</mat-option>
                     <mat-option value="h">Vulnerabilities</mat-option>
 
-
-
-
-
                   </mat-select>
                 </mat-form-field>
-              </div>
+              </div> -->
             </div>
 <!------------------------->
             <div class=" row">
-              <div class=" col-md-4 pr-md-1">
+              <!-- <div class=" col-md-4 pr-md-1">
                 <mat-form-field style="top: 1.25em;  margin-top: 2px; height: 30px;">
                   <mat-select placeholder="BUILDTYPE"
                               [(value)]="selectedElementGroup4" selected>
@@ -160,8 +173,8 @@
                   </mat-select>
                 </mat-form-field>
 
-              </div>
-              <div class=" col-md-4 px-md-1">
+              </div> -->
+              <!-- <div class=" col-md-4 px-md-1">
                 <mat-form-field style="top: 1.25em;  margin-top: 2px; height: 30px;">
                   <mat-select placeholder="UTILITIES"
                               [(value)]="selectedElementGroup5" selected>
@@ -221,86 +234,88 @@
 
                   </mat-select>
                 </mat-form-field>
-              </div>
-            </div>
+              </div>-->
+            </div> 
             <!--------------------------------->
             <div class=" row">
               <div class=" col-md-4 pr-md-1">
                 <mat-form-field style="top: 1.25em;  margin-top: 2px; height: 30px;">
                   <mat-select placeholder="ENCODERS"
+                              [(ngModel)]="Encoders"
+                              name="Encoders"
                               [(value)]="selectedElementGroup7" selected>
                     <mat-optgroup label="bases">
-                      <mat-option value="e1">base64</mat-option>
+                      <mat-option value="base64">base64</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="cipher">
-                      <mat-option value="v1">ascii_value_shift</mat-option>
-                      <mat-option value="v2">asymmetric_decrypt</mat-option>
-                      <mat-option value="c3">bitwise_xor</mat-option>
-                      <mat-option value="c3">braille</mat-option>
-                      <mat-option value="c3">caesar_shift</mat-option>
-                      <mat-option value="c3">dna</mat-option>
-                      <mat-option value="c3">morse_code</mat-option>
-                      <mat-option value="c3">vigenere</mat-option>
+                      <mat-option value="ascii_value_shift">ascii_value_shift</mat-option>
+                      <mat-option value="asymmetric_decrypt">asymmetric_decrypt</mat-option>
+                      <mat-option value="bitwise_xor">bitwise_xor</mat-option>
+                      <mat-option value="braille">braille</mat-option>
+                      <mat-option value="caesar_shift">caesar_shift</mat-option>
+                      <mat-option value="dna">dna</mat-option>
+                      <mat-option value="morse_code">morse_code</mat-option>
+                      <mat-option value="vigenere">vigenere</mat-option>
 
                     </mat-optgroup>
                     <mat-optgroup label="compression">
-                      <mat-option value="e1">Huffman</mat-option>
+                      <mat-option value="Huffman">Huffman</mat-option>
 
                     </mat-optgroup>
 
                     <mat-optgroup label="csv">
-                      <mat-option value="v1">inputs_to_csv</mat-option>
+                      <mat-option value="inputs_to_csv">inputs_to_csv</mat-option>
 
                     </mat-optgroup>
                     <mat-optgroup label="format">
-                      <mat-option value="e1">ascii_art</mat-option>
+                      <mat-option value="ascii_art">ascii_art</mat-option>
 
                     </mat-optgroup>
 
                     <mat-optgroup label="hash">
-                      <mat-option value="v1">bcrypt</mat-option>
-                      <mat-option value="v2">lm</mat-option>
-                      <mat-option value="c3">md4</mat-option>
-                      <mat-option value="c3">md5</mat-option>
-                      <mat-option value="c3">mysql_password</mat-option>
-                      <mat-option value="c3">ntlm</mat-option>
-                      <mat-option value="c3">rmd160</mat-option>
-                      <mat-option value="c3">scrypt</mat-option>
-                      <mat-option value="c3">sha1</mat-option>
-                      <mat-option value="c3">sha1</mat-option>
-                      <mat-option value="c3">sha3</mat-option>
-                      <mat-option value="c3">sha3 -224</mat-option>
-                      <mat-option value="c3">sha3-256</mat-option>
-                      <mat-option value="c3">sha3-384</mat-option>
-                      <mat-option value="c3">sha3-512</mat-option>
-                      <mat-option value="c3">sha224</mat-option>
-                      <mat-option value="c3">sha256</mat-option>
-                      <mat-option value="c3">sha384</mat-option>
-                      <mat-option value="c3">sha512</mat-option>
-                      <mat-option value="c3">siphash</mat-option>
-                      <mat-option value="c3">whirlpool</mat-option>
+                      <mat-option value="bcrypt">bcrypt</mat-option>
+                      <mat-option value="lm">lm</mat-option>
+                      <mat-option value="md4">md4</mat-option>
+                      <mat-option value="md5">md5</mat-option>
+                      <mat-option value="mysql_password">mysql_password</mat-option>
+                      <mat-option value="ntlm">ntlm</mat-option>
+                      <mat-option value="rmd160">rmd160</mat-option>
+                      <mat-option value="scrypt">scrypt</mat-option>
+                      <mat-option value="sha1">sha1</mat-option>
+                      <mat-option value="sha1">sha1</mat-option>
+                      <mat-option value="sha3">sha3</mat-option>
+                      <mat-option value="sha3 -224">sha3 -224</mat-option>
+                      <mat-option value="sha3-256">sha3-256</mat-option>
+                      <mat-option value="sha3-384">sha3-384</mat-option>
+                      <mat-option value="sha3-512">sha3-512</mat-option>
+                      <mat-option value="sha224">sha224</mat-option>
+                      <mat-option value="sha256">sha256</mat-option>
+                      <mat-option value="sha384">sha384</mat-option>
+                      <mat-option value="sha512">sha512</mat-option>
+                      <mat-option value="siphash">siphash</mat-option>
+                      <mat-option value="whirlpool">whirlpool</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="html">
-                      <mat-option value="v1">markdown_to_html</mat-option>
+                      <mat-option value="markdown_to_html">markdown_to_html</mat-option>
 
                     </mat-optgroup>
 
                     <mat-optgroup label="selector">
-                      <mat-option value="v1">concatenate</mat-option>
-                      <mat-option value="v2">random_line_selector</mat-option>
-                      <mat-option value="c3">random_string_selector</mat-option>
-                      <mat-option value="c3">random_string_selector_with_exclusions</mat-option>
+                      <mat-option value="concatenate">concatenate</mat-option>
+                      <mat-option value="random_line_selector">random_line_selector</mat-option>
+                      <mat-option value="random_string_selector">random_string_selector</mat-option>
+                      <mat-option value="random_string_selector_with_exclusions">random_string_selector_with_exclusions</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="string">
-                      <mat-option value="v1">1337</mat-option>
-                      <mat-option value="v2">binary</mat-option>
-                      <mat-option value="c3">dec</mat-option>
-                      <mat-option value="c3">hex</mat-option>
-                      <mat-option value="c3">oct</mat-option>
-                      <mat-option value="c3">rot13</mat-option>
+                      <mat-option value="1337">1337</mat-option>
+                      <mat-option value="binary">binary</mat-option>
+                      <mat-option value="dec">dec</mat-option>
+                      <mat-option value="hex">hex</mat-option>
+                      <mat-option value="oct">oct</mat-option>
+                      <mat-option value="rot13">rot13</mat-option>
                     </mat-optgroup>
 
 
@@ -311,17 +326,19 @@
               <div class=" col-md-4 px-md-1">
                 <mat-form-field style="top: 1.25em;  margin-top: 2px; height: 30px;">
                   <mat-select placeholder="NETWORKS"
+                  [(ngModel)]="Network"
+                  name="Network"
                               [(value)]="selectedElementGroup8" selected>
 
                     <mat-optgroup label="HOST_ONLY">
-                      <mat-option value="s1">private_network_1</mat-option>
-                      <mat-option value="s2">private_network_1</mat-option>
-                      <mat-option value="s2">private_network_3</mat-option>
+                      <mat-option value="private_network_1">private_network_1</mat-option>
+                      <mat-option value="private_network_1">private_network_1</mat-option>
+                      <mat-option value="private_network_3">private_network_3</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="PUBLIC">
-                      <mat-option value="s3">public_network_1</mat-option>
-                      <mat-option value="s3">public_network_2</mat-option>
+                      <mat-option value="public_network_1">public_network_1</mat-option>
+                      <mat-option value="public_network_2">public_network_2</mat-option>
 
                     </mat-optgroup>
                   </mat-select>
@@ -332,10 +349,12 @@
               <div class=" col-md-4 pl-md-1">
                 <mat-form-field style="top: 1.25em;  margin-top: 2px; height: 60px;">
                   <mat-select placeholder="SERVICES"
+                  [(ngModel)]="Service"
+                    name="Service"
                               [(value)]="selectedElementGroup9" selected>
-                    <mat-option value="a">CTF</mat-option>
-                    <mat-option value="b">VUL MACHINE</mat-option>
-                    <mat-option value="c">WEB</mat-option>
+                    <mat-option value="CTF">CTF</mat-option>
+                    <mat-option value="VUL MACHINE">VUL MACHINE</mat-option>
+                    <mat-option value="WEB">WEB</mat-option>
                   </mat-select>
                 </mat-form-field>
               </div>
@@ -346,15 +365,17 @@
               <div class=" col-md-4 pr-md-1">
                 <mat-form-field style="top: 1.25em;  margin-top: 2px; height: 30px;">
                   <mat-select placeholder="WEBAPPS"
+                  [(ngModel)]="webapp"
+                    name="webapp"
                               [(value)]="selectedElementGroup5" selected>
-                    <mat-option value="v1">commando</mat-option>
-                    <mat-option value="v2">gitlist_040</mat-option>
-                    <mat-option value="c3">moinmoin_195</mat-option>
-                    <mat-option value="c3">onlinestore</mat-option>
-                    <mat-option value="c3">wordpress_1x</mat-option>
-                    <mat-option value="c3">wordpress_2x</mat-option>
-                    <mat-option value="c3">wordpress_3x</mat-option>
-                    <mat-option value="c3">wordpress_4x</mat-option>
+                    <mat-option value="commando">commando</mat-option>
+                    <mat-option value="gitlist_040">gitlist_040</mat-option>
+                    <mat-option value="moinmoin_195">moinmoin_195</mat-option>
+                    <mat-option value="onlinestore">onlinestore</mat-option>
+                    <mat-option value="wordpress_1x">wordpress_1x</mat-option>
+                    <mat-option value="wordpress_2x">wordpress_2x</mat-option>
+                    <mat-option value="wordpress_3x">wordpress_3x</mat-option>
+                    <mat-option value="wordpress_4x">wordpress_4x</mat-option>
 
                   </mat-select>
                 </mat-form-field>
@@ -363,90 +384,92 @@
               <div class=" col-md-4 px-md-1">
                 <mat-form-field style="top: 1.25em;  margin-top: 2px; height: 30px;">
                   <mat-select placeholder="GENERATORS"
+                  [(ngModel)]="generator"
+                    name="generator"
                               [(value)]="selectedElementGroup6" selected>
                     <mat-optgroup label="Challenges">
-                    <mat-option value="rsa">rsa_challenge</mat-option>
-                    <mat-option value="enc">encoded_diff</mat-option>
-                    <mat-option value="exf">exif</mat-option>
-                     <mat-option value="hsif">hidden_strings_in_image_file</mat-option>
-                      <mat-option value="hzif">hidden_zip_in_image_file</mat-option>
+                    <mat-option value="rsa_challenge">rsa_challenge</mat-option>
+                    <mat-option value="encoded_diff">encoded_diff</mat-option>
+                    <mat-option value="exif">exif</mat-option>
+                     <mat-option value="hidden_strings_in_image_file">hidden_strings_in_image_file</mat-option>
+                      <mat-option value="hidden_zip_in_image_file">hidden_zip_in_image_file</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="Compression">
-                      <mat-option value="zi">Zip</mat-option>
+                      <mat-option value="Zip">Zip</mat-option>
 
                     </mat-optgroup>
 
                     <mat-optgroup label="Content">
-                      <mat-option value="e">address_uk</mat-option>
-                      <mat-option value="m">address_us</mat-option>
-                      <mat-option value="h">application_name</mat-option>
+                      <mat-option value="address_uk">address_uk</mat-option>
+                      <mat-option value="address_us">address_us</mat-option>
+                      <mat-option value="application_name">application_name</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="Domain">
-                      <mat-option value="e">easy</mat-option>
-                      <mat-option value="m">medium</mat-option>
-                      <mat-option value="h">high</mat-option>
+                      <mat-option value="easy">easy</mat-option>
+                      <mat-option value="medium">medium</mat-option>
+                      <mat-option value="high">high</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="Filenames">
-                      <mat-option value="e">easy</mat-option>
-                      <mat-option value="m">medium</mat-option>
-                      <mat-option value="h">high</mat-option>
+                      <mat-option value="easy">easy</mat-option>
+                      <mat-option value="medium">medium</mat-option>
+                      <mat-option value="high">high</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="Flag">
-                      <mat-option value="e">easy</mat-option>
-                      <mat-option value="m">medium</mat-option>
-                      <mat-option value="h">high</mat-option>
+                      <mat-option value="easy">easy</mat-option>
+                      <mat-option value="medium">medium</mat-option>
+                      <mat-option value="high">high</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="Html">
-                      <mat-option value="e">easy</mat-option>
-                      <mat-option value="m">medium</mat-option>
-                      <mat-option value="h">high</mat-option>
+                      <mat-option value="easy">easy</mat-option>
+                      <mat-option value="medium">medium</mat-option>
+                      <mat-option value="high">high</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="images">
-                      <mat-option value="e">easy</mat-option>
-                      <mat-option value="m">medium</mat-option>
-                      <mat-option value="h">high</mat-option>
+                      <mat-option value="easy">easy</mat-option>
+                      <mat-option value="medium">medium</mat-option>
+                      <mat-option value="high">high</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="Key">
-                      <mat-option value="e">easy</mat-option>
-                      <mat-option value="m">medium</mat-option>
-                      <mat-option value="h">high</mat-option>
+                      <mat-option value="easy">easy</mat-option>
+                      <mat-option value="medium">medium</mat-option>
+                      <mat-option value="high">high</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="Messages">
-                      <mat-option value="e">easy</mat-option>
-                      <mat-option value="m">medium</mat-option>
-                      <mat-option value="h">high</mat-option>
+                      <mat-option value="easy">easy</mat-option>
+                      <mat-option value="medium">medium</mat-option>
+                      <mat-option value="high">high</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="Network">
-                      <mat-option value="e">easy</mat-option>
-                      <mat-option value="m">medium</mat-option>
-                      <mat-option value="h">high</mat-option>
+                      <mat-option value="easy">easy</mat-option>
+                      <mat-option value="medium">medium</mat-option>
+                      <mat-option value="high">high</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="Passwords">
-                      <mat-option value="e">easy</mat-option>
-                      <mat-option value="m">medium</mat-option>
-                      <mat-option value="h">high</mat-option>
+                      <mat-option value="easy">easy</mat-option>
+                      <mat-option value="medium">medium</mat-option>
+                      <mat-option value="high">high</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="Random">
-                      <mat-option value="e">easy</mat-option>
-                      <mat-option value="m">medium</mat-option>
-                      <mat-option value="h">high</mat-option>
+                      <mat-option value="easy">easy</mat-option>
+                      <mat-option value="medium">medium</mat-option>
+                      <mat-option value="high">high</mat-option>
                     </mat-optgroup>
 
                     <mat-optgroup label="Structured Content">
-                      <mat-option value="e">easy</mat-option>
-                      <mat-option value="m">medium</mat-option>
-                      <mat-option value="h">high</mat-option>
+                      <mat-option value="easy">easy</mat-option>
+                      <mat-option value="medium">medium</mat-option>
+                      <mat-option value="high">high</mat-option>
                     </mat-optgroup>
                   </mat-select>
                 </mat-form-field>
@@ -454,27 +477,28 @@
 
               <div class=" col-md-4 px-md-1">
                 <mat-form-field style="top: 1.25em;  margin-top: 2px; height: 30px;">
-                  <mat-select placeholder="GENERATORS"
+                  <mat-select placeholder="DATASTORES"
+                  [(ngModel)]="datastore"
+                    name="datastore"
                               [(value)]="selectedElementGroup6" selected>
                     <mat-optgroup label="Challenges">
-                      <mat-option value="rsa">rsa_challenge</mat-option>
-                      <mat-option value="enc">encoded_diff</mat-option>
-                      <mat-option value="exf">exif</mat-option>
-                      <mat-option value="hsif">hidden_strings_in_image_file</mat-option>
-                      <mat-option value="hzif">hidden_zip_in_image_file</mat-option>
+                      <mat-option value="rsa_challenge">rsa_challenge</mat-option>
+                      <mat-option value="encoded_diff">encoded_diff</mat-option>
+                      <mat-option value="exif">exif</mat-option>
+                      <mat-option value="hidden_strings_in_image_file">hidden_strings_in_image_file</mat-option>
+                      <mat-option value="hidden_zip_in_image_file">hidden_zip_in_image_file</mat-option>
                     </mat-optgroup>
 
                   </mat-select></mat-form-field></div>
 
-
-
+            </div>
+            <div class=" card-footer">
+              <button class="mt-3 btn btn-fill btn-danger" type="submit" required>GENERATE</button>
             </div>
           </form>
         </div>
 
-        <div class=" card-footer">
-          <button class=" btn btn-fill btn-danger" type="submit">GENERATE</button>
-        </div>
+        
       </div>
     </div>
 
