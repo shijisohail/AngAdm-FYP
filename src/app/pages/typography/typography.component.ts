@@ -97,8 +97,8 @@ console.log("Value of", this.datastore)
 
 var URL = 'http://127.0.0.1:8000/machinecreation'
   $.post(URL, data, function(response){
-      if(response === 'success'){ alert('Yay!'); }
-      else{ alert('Error! :('); }
+      if(response === 'success'){ console.log("Yah!!!"); }
+      else{ console.log("No Response from Server!!!"); }
   });  
   }
   
