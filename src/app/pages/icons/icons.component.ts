@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
+import * as jQuery from 'jquery';
 import {AccordionModule} from 'primeng/accordion';
 import { HttpClient } from '@angular/common/http';  
 import { FormBuilder, FormGroup } from "@angular/forms";
@@ -23,7 +24,14 @@ export class IconsComponent implements OnInit {
   AttackTitle:any;
   AttackDescription:any;
 onSubmit(){
-  
+ 
+  // var data = {'AttackTitle': this.AttackTitle,'AttackDescription': this.AttackDescription};
+  // var URL = 'http://127.0.0.1:8000/attackinfo'
+  // $.post(URL, data, function(response){
+  //     if(response === 'success'){ alert('Yay!'); }
+  //     else{ alert('Error! :('); }
+  // });  
+
 var val={
   AttackTitle:this.AttackTitle,
   AttackDescription:this.AttackDescription
